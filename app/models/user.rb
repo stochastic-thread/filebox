@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   validates :email, :presence => true, :uniqueness => true
 
+  has_many :uploads
+
   private
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation, :remember_me)

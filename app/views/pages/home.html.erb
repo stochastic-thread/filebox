@@ -16,17 +16,20 @@
 
     <div class="container">
       <%= render partial: 'pages/navigation' %>
-
+    
+    <% if current_user.nil? %>
       <div class="jumbotron">
         <h1>file storage for people</h1>
         <p class="lead">We're making the world a better place</p>
         <p><a class="btn btn-lg btn-success" href='<%=new_user_registration_path%>' role="button">Sign up today</a></p>
       </div>
 
-
       <footer class="footer">
         <p>&copy; Company 2014</p>
       </footer>
+    <% else %>
+        <button class="btn btn-default"><%= link_to "Add Files", new_upload_path %></button>
+    <% end %>
 
     </div> <!-- /container -->
 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :uploads
+
   get 'profiles/show'
 
   get 'pages/home'
