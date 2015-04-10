@@ -17,24 +17,24 @@
     <div class="container">
       <%= render partial: 'pages/navigation' %>
     
-    <% if current_user.nil? %>
       <div class="jumbotron">
-        <h1>file storage for people</h1>
+        <h1>filebox</h1>
+        <h2>file storage for humans</h2>
+
+
+        <div id="hack" style="position: relative; height: 100px"></div>
         <p class="lead">We're making the world a better place</p>
-        <p><a class="btn btn-lg btn-success" href='<%=new_user_registration_path%>' role="button">Sign up today</a></p>
+        <% if current_user.nil? %>
+          <p><a class="btn btn-lg btn-success" href='<%=new_user_registration_path%>' role="button">Sign up today</a></p>
+        <% else %>
+            <% if !current_user.uploads.nil? and current_user.uploads.size != 0 %>
+                <button class="btn btn-default"><%= link_to "See Your Files!", uploads_path %></button>
+            <% end %>
+        <% end %>
+
+        <button class="btn btn-default"><%= link_to "Add Files", new_upload_path %></button>
       </div>
 
-      <footer class="footer">
-        <p>&copy; Company 2014</p>
-      </footer>
-    <% else %>
-        <button class="btn btn-default"><%= link_to "Add Files", new_upload_path %></button>
-    <% end %>
-
     </div> <!-- /container -->
-
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

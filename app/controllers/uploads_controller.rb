@@ -19,9 +19,8 @@ class UploadsController < ApplicationController
   end
 
   def create
-    content = upload_params["content"]
-    puts "content is #{content}, #{content.class}"
     @upload = Upload.new(upload_params)
+    @upload.user_id = current_user.id
     @upload.save
     respond_with(@upload)
   end
