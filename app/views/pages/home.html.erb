@@ -29,10 +29,12 @@
         <% else %>
             <% if !current_user.uploads.nil? and current_user.uploads.size != 0 %>
                 <button class="btn btn-default"><%= link_to "See Your Files!", uploads_path %></button>
+
+                        <button class="btn btn-default"><%= link_to "Add Files", new_upload_path %></button>
             <% end %>
         <% end %>
 
-        <button class="btn btn-default"><%= link_to "Add Files", new_upload_path %></button>
+
       </div>
 
     </div> <!-- /container -->
