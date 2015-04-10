@@ -1,5 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['colle-filebox'],
+    :access_key_id => ENV['AKIAJGNAIWZ5LRJ2KXYQ'],
+    :secret_access_key => ENV['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']
+  }
+}
 
   # Code is not reloaded between requests.
   config.cache_classes = true

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+
   get 'pages/home'
 
   get 'pages/about'
