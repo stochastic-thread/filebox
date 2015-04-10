@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'twitter-bootstrap-rails'
 
 gem 'paperclip'
-gem 'aws-sdk', git: "https://github.com/aws/aws-sdk-ruby"
+gem 'aws-sdk'
 gem 'devise'
 gem 'rails_12factor', group: :production
 
